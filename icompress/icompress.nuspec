@@ -49,7 +49,7 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
     <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
     <!--<mailingListUrl></mailingListUrl>-->
     <!--<bugTrackerUrl></bugTrackerUrl>-->
-    <tags>icompress SPACE_SEPARATED</tags>
+    <tags>mass image compressor converter</tags>
     <summary>High Quality Batch Image Compression of JPEG, PNG and Raw formats</summary>
     <description>Mass Image Compressor is easy to use - a point and shoot batch image compressor and converter tool for Web site optimization, photographers, HTML game creator and casual Windows users.</description>
     <!-- <releaseNotes>__REPLACE_OR_REMOVE__MarkDown_Okay</releaseNotes> -->
