@@ -4,7 +4,7 @@ $packageName = $env:ChocolateyPackageName
 $zipFile = 'MassImageCompressorV3.2.0.zip'
 $setupExe = 'MassImageCompressorV3.2.0\setup.exe'
 $zipUrl = 'https://deac-fra.dl.sourceforge.net/project/icompress/icompress/Mass%20Image%20Compressor/MassImageCompressorV3.2.0.zip'
-$setupExePath = "C:\ProgramData\chocolatey\lib\icompress\tools\MassImageCompressorV3.2.0\setup.exe"
+$setupExePath = "$toolsDir\$setupExe"
 $processName = 'Image Compressor'
 
 $packageArgs = @{
