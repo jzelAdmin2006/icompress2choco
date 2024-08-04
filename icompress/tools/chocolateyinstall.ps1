@@ -7,7 +7,7 @@ $zipUrl = 'https://deac-fra.dl.sourceforge.net/project/icompress/icompress/Mass%
 $setupExePath = "$toolsDir\$setupExe"
 $processName = 'Image Compressor'
 
-$packageArgs = @{
+$zipPackageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
   fileType      = 'ZIP'
@@ -16,9 +16,19 @@ $packageArgs = @{
   checksumType  = 'sha256'
 }
 
-Install-ChocolateyZipPackage @packageArgs
+Install-ChocolateyZipPackage @zipPackageArgs
 
-$process = Start-Process -FilePath $setupExePath -ArgumentList '/Q' -NoNewWindow -PassThru -Wait
+$installPackageArgs = @{
+  packageName   = $packageName
+  fileType      = 'exe'
+  file          = $setupExePath
+  silentArgs    = "/Q"
+  validExitCodes= @(0, 3010, 1641)
+  softwareName  = "$packageName*"
+}
+
+Install-ChocolateyInstallPackage @installPackageArgs
+
 Start-Job -ScriptBlock {
     param($processName)
     while (-not (Get-Process -Name $processName -ErrorAction SilentlyContinue)) { 
